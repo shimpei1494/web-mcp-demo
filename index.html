@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebMCP TODO デモ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>WebMCP TODO デモ</h1>
+    <p class="lead">このアプリにはAIのコードが一切ありません。<code>webmcp.js</code> で既存の関数をツールとして登録しているだけで、ブラウザのAIエージェントから操作できます。</p>
+    <p id="webmcp-status" class="status">WebMCP の状態を確認中…</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>TODO</h2>
+      <form id="todo-form">
+        <input id="todo-input" type="text" placeholder="やることを入力" autocomplete="off" aria-label="やること">
+        <button type="submit">追加</button>
+      </form>
+      <ul id="todo-list"></ul>
+      <p id="todo-count" class="muted"></p>
+    </section>
+
+    <section class="panel">
+      <h2>公開しているツール</h2>
+      <ul id="tool-list" class="tools"></ul>
+
+      <h2>エージェントからの呼び出しログ</h2>
+      <p class="muted">エージェント（または Model Context Tool Inspector）がツールを呼ぶと、ここに入力と結果が出ます。画面のボタン操作は記録されません。</p>
+      <ol id="call-log" class="log"></ol>
+    </section>
+  </main>
+
+  <script type="module" src="todo.js"></script>
+  <script type="module" src="webmcp.js"></script>
+</body>
+</html>
